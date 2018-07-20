@@ -18,5 +18,11 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path(r'', views.index, name='index'),
+    path(r'/', views.index, name='index'),
+    path(r'add/', views.add_employee, name='add_employee'),
+    path(r'delete/<int:id>', views.del_employee, name='del_employee'),
+    path(r'viewEmployeeList/', views.view_employee_list, name='view_employee_list'),
+    path(r'payslip/<int:id>', views.view_payslip, name='view_payslip'),
+    path(r'generate_payslip/', views.generate_payslip, name='generate_payslip'),
+
 ]

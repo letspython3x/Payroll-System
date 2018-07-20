@@ -6,26 +6,21 @@ def index(request):
     return render(request, 'source/index.html', context={})
 
 
-def addEmployee(request):
-    # code for addEmployee
-    pass
+def add_employee(request):
+    return HttpResponse("Employee Added")
 
 
-def deleteEmployee(request):
-    # code for deleting an Employee
-    pass
+def del_employee(request, id):
+    return HttpResponse("Employee Deleted")
 
 
-def viewEmployeeList(request):
-    # code for deleting an Employee
-    pass
+def view_employee_list(request):
+    return HttpResponse("Employee List")
 
 
-def viewPaySlip(request):
-    # code for deleting an Employee
-    pass
+def view_payslip(request, id):
+    return HttpResponse("View Payslip")
 
 
-def generatePaySlip(request):
-    # code for deleting an Employee
-    pass
+def generate_payslip(request):
+    return HttpResponse("Payslip Generated")
