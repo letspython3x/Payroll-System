@@ -4,4 +4,24 @@
 
 {% block content %}
     Welcome User.
+    Below is the employee List <br> </br>
+
+    <table border="1">
+        <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Department</th>
+        </tr>
+
+        {% for e in empList %}
+        <tr>
+            <td> {{ e.empid }} </td>
+            <td> {{ e.name }} </td>
+            <td> {{ e.designation }} </td>
+            <td> {{ e.department }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+
 {% endblock %}
