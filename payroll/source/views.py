@@ -1,9 +1,13 @@
 from django.shortcuts import render, HttpResponse
+from .models import Employee
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'source/index.html', context={})
+    if request.method == 'GET':
+        empList = Employee.objects.all()
+    context = {'empList': empList}
+    return render(request, 'source/index.html', context=context)
 
 
 def add_employee(request):
