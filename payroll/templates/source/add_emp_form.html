@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} Add Employee {% endblock %}
+
+{% block content %}
+Fill in below form to add an employee
+<form name="form" method="POST" action="{% url 'add_employee' %}">
+     {% csrf_token %}
+    <table>
+        <tr>
+            <td><label>Emp ID</label></td>
+            <td><input type="text" name="empid" id="empid"></td>
+        </tr>
+        <tr>
+            <td><label>Name</label></td>
+            <td><input type="text" name="name" id="name"></td>
+        </tr>
+        <tr>
+            <td><label>Department</label></td>
+            <td><input type="text" name="department"></td>
+        </tr>
+        <tr>
+            <td><label>Designation</label></td>
+            <td><input type="text" name="designation"></td>
+        </tr>
+        <tr>
+            <td><input type="submit"></td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}
