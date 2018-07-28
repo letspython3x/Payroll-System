@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from .models import Employee
+from .forms import EmployeeForm
 
 
 # Create your views here.
@@ -11,7 +12,9 @@ def index(request):
 
 
 def add_employee(request):
-    return HttpResponse("Employee Added")
+    form = EmployeeForm()
+    context = {'form': form}
+    return render(request, 'source/add_emp_form.html', context=context)
 
 
 def del_employee(request, id):

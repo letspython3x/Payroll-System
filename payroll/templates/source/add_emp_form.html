@@ -4,29 +4,10 @@
 
 {% block content %}
 Fill in below form to add an employee
-<form name="form" method="POST" action="{% url 'add_employee' %}">
-     {% csrf_token %}
-    <table>
-        <tr>
-            <td><label>Emp ID</label></td>
-            <td><input type="text" name="empid" id="empid"></td>
-        </tr>
-        <tr>
-            <td><label>Name</label></td>
-            <td><input type="text" name="name" id="name"></td>
-        </tr>
-        <tr>
-            <td><label>Department</label></td>
-            <td><input type="text" name="department"></td>
-        </tr>
-        <tr>
-            <td><label>Designation</label></td>
-            <td><input type="text" name="designation"></td>
-        </tr>
-        <tr>
-            <td><input type="submit"></td>
-        </tr>
-    </table>
+<form method="POST" class="post-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Save</button>
 </form>
 
 {% endblock %}
