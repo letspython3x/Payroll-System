@@ -33,18 +33,21 @@ def add_employee(request):
 
 def del_employee(request, id):
     emp = Employee.objects.get(empid=id)
+
     emp.delete()
     return HttpResponse("Employee Deleted")
 
 
 def view_employee(request, id):
-    emp = Employee.objects.get(empid=id)
-    print(vars(emp))
-    context = {'field': vars(emp)}
+    try:
+        emp = Employee.objects.get(empid=id)
+    except Employee.DoesNotExist:
+        emp=None
     if emp:
-        ontext = {'field': vars(emp)}
+        context = {'field': vars(emp)}
     else:
-        context = {}
+        message = "Employee Doesn't exist"
+        context = {'message': message}
     return render(request, 'source/emp_view.html', context=context)
 
 
