@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Employee Details {% endblock %}
+
+{% block content %}
+
+<p>Name: {{ field.name }}</p>
+<p>Email: {{ field.email }}</p>
+<p>Empid: {{ field.empid }}</p>
+<p>Designation: {{ field.designation }}</p>
+<p>department: {{ field.department }}</p>
+
+<br><br>
+<a class="button" href="{% url 'del_employee' %}"{{ field.empid }}> Delete </a>
+<br>
+<a class="button" href="{% url 'udpate_employee/field.empid' %}"> Update</a>
+
+{% endblock %}
