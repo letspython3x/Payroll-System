@@ -20,9 +20,10 @@ from . import views
 urlpatterns = [
     path(r'', views.index, name='index'),
     path(r'add/', views.add_employee, name='add_employee'),
-    path(r'del/<int:id>', views.del_employee, name='del_employee'),
-    path(r'update/<int:id>', views.update_employee,name='update_employee'),
-    path(r'payslip/<int:id>', views.view_payslip, name='view_payslip'),
+    path(r'del/<str:id>', views.del_employee, name='del_employee'),
+    path(r'update/<str:id>', views.update_employee, name='update_employee'),
+    path(r'view/<str:id>', views.view_employee, name='view_employee'),
+    path(r'payslip/<str:id>', views.view_payslip, name='view_payslip'),
     path(r'generate_payslip/', views.generate_payslip, name='generate_payslip'),
 
 ]

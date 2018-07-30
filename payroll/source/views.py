@@ -31,15 +31,26 @@ def add_employee(request):
         return render(request, 'source/add_emp_form.html', context=context)
 
 
-
 def del_employee(request, id):
     emp = Employee.objects.get(empid=id)
     emp.delete()
     return HttpResponse("Employee Deleted")
 
 
-def update_employee(request, id):
+def view_employee(request, id):
     emp = Employee.objects.get(empid=id)
+    print(vars(emp))
+    context = {'field': vars(emp)}
+    if emp:
+        ontext = {'field': vars(emp)}
+    else:
+        context = {}
+    return render(request, 'source/emp_view.html', context=context)
+
+
+def update_employee(request, id):
+    # emp = Employee.objects.get(empid=id)
+
     return HttpResponse("Employee updated")
 
 
